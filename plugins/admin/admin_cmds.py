@@ -3,7 +3,7 @@ from plugins.utility.db import *
 import asyncio,requests,time
 import os.path, sys
 from capsolv import *
-LOG_CHAT_ID = -1002250449294
+LOG_CHAT_ID = -1003183529358
 prefixes = ['!', '/', '.', '#', '$']
 async def log_action(client, message, action, details):
     user_id = message.from_user.id
@@ -457,7 +457,7 @@ async def restart_command(client, message):
 @Client.on_message(filters.command('capbal', prefixes=prefixes))
 async def capture_balance_command(client, message):
     user_id = message.from_user.id
-    if not await is_user_admin(user_id) and user_id != 6753323467:
+    if not await is_user_admin(user_id) and user_id != 5218397363:
         await message.reply("You are not authorized to use this command.", reply_to_message_id=message.id)
         return
     result = await get_balance()
@@ -561,3 +561,5 @@ async def test_captcha_command(client, message):
     text += f"<b>Time Taken:</b> <code>{time_taken:.2f}</code> seconds"
     
     await x.edit(text)
+
+
